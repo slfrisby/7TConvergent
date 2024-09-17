@@ -1,0 +1,11 @@
+*
+!.gitattributes
+!.gitignore
+!readme.md
+!.gitkeep
+!*.m
+!*.py
+!*.sh
+!*.pl
+!*.opts
+!*/

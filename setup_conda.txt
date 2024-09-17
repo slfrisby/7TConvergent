@@ -1,0 +1,20 @@
+# to set up the conda environment for this project, the following scripts should be run LINE BY LINE on the login node.
+
+bash 
+
+# access conda
+export PATH=$PATH:/imaging/local/software/anaconda/latest/x86_64/bin/
+
+# set paths
+source activate
+
+# create conda environment
+conda create -n DAISY python=3.12
+source activate DAISY
+pip install numpy scikit-learn scipy mapca nilearn nibabel
+pip install tedana
+# requires revert to a previous version of bokeh
+pip install bokeh==3.3.4
+pip install heudiconv
+
+
