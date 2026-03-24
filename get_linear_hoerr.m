@@ -175,7 +175,7 @@ function o = get_linear_hoerr(varargin)
                 mp = cvglmnet(xptrn,ytrn,'gaussian',options,'deviance',9);
                 % assess model using the value of lambda selected by the
                 % REAL model
-                permpred = cvglmnetPredict(mp,xtst,m.lambda_min);
+                permpred = cvglmnetPredict(mp,xptst,m.lambda_min);
                 permpredictedcoords(~s,perm) = permpred;
                 permoutput(i,perm) = corr(permpred,ytst);
                 if var(permpred) == 0

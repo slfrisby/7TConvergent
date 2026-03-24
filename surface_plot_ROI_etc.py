@@ -134,9 +134,9 @@ L_ATL_pos[L_ATL_pos!=0] = 1
 R_ATL_ant[R_ATL_ant!=0] = 1
 R_ATL_pos[R_ATL_pos!=0] = 1
 
-# whole left hemisphere
+# whole left hemisphere ROI
 
-# define colourmap for LASSO
+# define colourmap 
 tmpcmap = ListedColormap(["mediumblue"])
 
 # whole left hemisphere viewed from underneath
@@ -148,31 +148,7 @@ bg_on_data=True,
 fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_LASSO_ROI.jpeg',dpi=300)
 plt.close(fig)
 
-# define colourmap for SOSLASSO
-tmpcmap = ListedColormap(['mediumvioletred'])
-
-# whole left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_left, L_ATL, hemi='left', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_left,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_SOSLASSO_ROI.jpeg',dpi=300)
-plt.close(fig)
-
-# define colourmap for grOWL
-tmpcmap = ListedColormap(["darkred"])
-
-# whole left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_left, L_ATL, hemi='left', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_left,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_grOWL_ROI.jpeg',dpi=300)
-plt.close(fig)
-
-# halves of left hemisphere
+# halves of left hemisphere ROI
 
 # define halves of left hemisphere
 tmp = np.zeros(163842,)
@@ -180,7 +156,7 @@ tmp[:] = np.nan
 tmp[L_ATL_ant == 1] = 1
 tmp[L_ATL_pos == 1] = 2
 
-# define colourmap for LASSO
+# define colourmap
 tmpcmap = ListedColormap(["dodgerblue","lightskyblue"])
 
 # halves of left hemisphere viewed from underneath
@@ -192,33 +168,9 @@ bg_on_data=True,
 fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_LASSO_ROI_halves.jpeg',dpi=300)
 plt.close(fig)
 
-# define colourmap for SOSLASSO
-tmpcmap = ListedColormap(["palevioletred","pink"])
+# whole right hemisphere ROI
 
-# halves of left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_left, tmp, hemi='left', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_left,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_SOSLASSO_ROI_halves.jpeg',dpi=300)
-plt.close(fig)
-
-# define colourmap for grOWL
-tmpcmap = ListedColormap(["crimson","lightcoral"])
-
-# halves of left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_left, tmp, hemi='left', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_left,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/L_ventral_grOWL_ROI_halves.jpeg',dpi=300)
-plt.close(fig)
-
-# whole right hemisphere
-
-# define colourmap for LASSO
+# define colourmap 
 tmpcmap = ListedColormap(["green"])
 
 # whole right hemisphere viewed from underneath
@@ -230,31 +182,7 @@ bg_on_data=True,
 fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_LASSO_ROI.jpeg',dpi=300)
 plt.close(fig)
 
-# define colourmap for SOSLASSO
-tmpcmap = ListedColormap(["rebeccapurple"])
-
-# whole right hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_right, R_ATL, hemi='right', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_right,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_SOSLASSO_ROI.jpeg',dpi=300)
-plt.close(fig)
-
-# define colourmap for grOWL
-tmpcmap = ListedColormap(["gold"])
-
-# whole right hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_right, R_ATL, hemi='right', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_right,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_grOWL_ROI.jpeg',dpi=300)
-plt.close(fig)
-
-# halves of right hemisphere
+# halves of right hemisphere ROI
 
 # define halves of right hemisphere
 tmp = np.zeros(163842,)
@@ -262,7 +190,7 @@ tmp[:] = np.nan
 tmp[R_ATL_ant == 1] = 1
 tmp[R_ATL_pos == 1] = 2
 
-# define colourmap for LASSO
+# define colourmap 
 tmpcmap = ListedColormap(["limegreen","palegreen"])
 
 # halves of left hemisphere viewed from underneath
@@ -272,30 +200,6 @@ colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_right,
 bg_on_data=True,
 )
 fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_LASSO_ROI_halves.jpeg',dpi=300)
-plt.close(fig)
-
-# define colourmap for SLASSO
-tmpcmap = ListedColormap(["mediumorchid","plum"])
-
-# halves of left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_right, tmp, hemi='right', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_right,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_SOSLASSO_ROI_halves.jpeg',dpi=300)
-plt.close(fig)
-
-# define colourmap for grOWL
-tmpcmap = ListedColormap(["yellow","lemonchiffon"])
-
-# halves of left hemisphere viewed from underneath
-fig = plotting.plot_surf_roi(
-pial_right, tmp, hemi='right', view=[270,270],
-colorbar=False, cmap=tmpcmap, alpha=1, bg_map= curv_right,
-bg_on_data=True,
-)
-fig.savefig('/group/mlr-lab/Saskia/7T_decoding/surface_plots/R_ventral_grOWL_ROI_halves.jpeg',dpi=300)
 plt.close(fig)
 
 

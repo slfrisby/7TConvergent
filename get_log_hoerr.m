@@ -171,7 +171,7 @@ function o = get_log_hoerr(varargin)
                 mp = cvglmnet(xptrn,ytrn,'binomial',options,'deviance',9);
                 % assess model using the value of lambda selected by the
                 % REAL model
-                permpred = cvglmnetPredict(mp,xtst,m.lambda_min);
+                permpred = cvglmnetPredict(mp,xptst,m.lambda_min);
                 permpredictedcoords(~s,perm) = permpred;
                 % calculate the error under the ROC curve
                 [~,~,~,AUC] = perfcurve(ytst,permpred,1);

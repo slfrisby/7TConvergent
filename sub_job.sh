@@ -7,7 +7,8 @@ mkdir -p $dirp/work/logs/
 fi
 
 #for s in 001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032; do
-for s in 023 024 025 026 027 028 029 030 031 032; do
+#for s in 023 024 025 026 027 028 029 030 031 032; do
+for s in 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 021 022 023 024 025 026 027 028 029 030 031 032; do
 #for s in 001; do
 
 echo "$s"
@@ -32,10 +33,10 @@ echo "$s"
 
 # gets coefficients for LASSO models - logistic and linear
 #sbatch -o $dirp/work/logs/"$s"_getcoefs.out -c 16 --job-name=COEF"$s" --export=ids=${s} $dirp/scripts/sub_matlabjob.sh
-#sbatch -o $dirp/work/logs/"$s"_getcoefs.out -c 16 -q lopri --job-name=COEF"$s" --export=ids=${s} $dirp/scripts/sub_matlabjob.sh
+sbatch -o $dirp/work/logs/"$s"_getcoefs.out -c 16 -q lopri --job-name=COEF"$s" --export=ids=${s} $dirp/scripts/sub_matlabjob.sh
 
 # makes coefficient surface meshes for plotting
-sbatch -o $dirp/work/logs/"$s"surface.out -c 16 --job-name=COEF_"$s" --export=ids=${s} $dirp/scripts/make_coefficient_surface_mesh.sh
+#sbatch -o $dirp/work/logs/"$s"surface.out -c 16 --job-name=COEF_"$s" --export=ids=${s} $dirp/scripts/make_coefficient_surface_mesh.sh
 #sbatch -o $dirp/work/logs/"$s"surface.out -c 16 -q lopri --job-name=COEF_"$s" --export=ids=${s} $dirp/scripts/make_coefficient_surface_mesh.sh
 
 # models permutation distributions
